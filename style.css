@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffff;
+  margin: 10%;
+  padding: 10px;
+  text-align: center;
+}
+button {
+  background-color: dodgerblue;
+  border: 2px white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 2vw;
+}
+.textAlignLeft {
+  float: left;
+  margin: 7% 15%;
+  text-align: left;
+  border-left: 4px solid dodgerblue;
+  padding: 10px;
+}
+strong {
+  font-size: x-large;
+}
+.textAlignLeft span {
+  font-weight: bolder;
+  font-size: xx-large;
+}
