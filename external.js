@@ -1,9 +1,9 @@
 const userSelection = (userInput) => {
-  if (userInput.toLowerCase() === "rock") {
-    return userInput;
-  } else if (userInput.toLowerCase() === "paper") {
-    return userInput;
-  } else if (userInput.toLowerCase() === "scissors") {
+  if (
+    userInput === "rock" ||
+    userInput === "paper" ||
+    userInput === "scissors"
+  ) {
     return userInput;
   } else {
     console.log("Not Valid!");
@@ -12,38 +12,32 @@ const userSelection = (userInput) => {
 // userSelection function is to get input from user.
 const computerSelection = () => {
   const randomNumber = Math.floor(Math.random() * 3);
-  if (randomNumber === 0) {
-    return "rock";
-  } else if (randomNumber === 1) {
-    return "paper";
-  } else if (randomNumber === 2) {
-    return "scissors";
+  switch (randomNumber) {
+    case 0:
+      return "rock";
+    case 1:
+      return "paper";
+    case 1:
+      return "scissors";
+    default:
+    // code block
   }
 };
 //computerSelection function is to get random value.
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
     return "The game is a tie!";
-  } else if (userChoice === "rock") {
-    if (computerChoice === "paper") {
-      return "The computer won!";
-    } else {
-      return "You won!";
-    }
-  } else if (userChoice === "paper") {
-    if (computerChoice === "scissors") {
-      return "The computer won!";
-    } else {
-      return "You won!";
-    }
-  } else if (userChoice === "scissors") {
-    if (computerChoice === "rock") {
-      return "The computer won!";
-    } else {
-      return "You won!";
-    }
+  } else if (
+    (userChoice === "rock" && computerChoice === "paper") ||
+    (userChoice === "paper" && computerChoice === "scissors") ||
+    (userChoice === "scissors" && computerChoice === "rock")
+  ) {
+    return "The computer won!";
+  } else {
+    return "You won!";
   }
 };
+
 //determineWinner function is used to get winner
 const playRound = (input) => {
   const userChoice = userSelection(input.toLowerCase());
